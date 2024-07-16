@@ -1,18 +1,22 @@
 "use client";
+import { useActivePath } from "@/utils/helper";
 import Link from "next/link";
 import { useState } from "react";
 
 const NavLinks = [
-  { id: 1, name: "Home", path: "/" },
-  { id: 2, name: "Benefits", path: "/blog" },
-  { id: 3, name: "Our Classes", path: "/about" },
-  { id: 4, name: "Contact Us", path: "/contact-us" },
+  { id: 1, name: "ประวัติ", path: "/history" },
+  { id: 2, name: "ผลงาน", path: "/working" },
+  { id: 3, name: "ไลฟ์", path: "/live" },
+  { id: 4, name: "Trend-X", path: "/trend-x" },
+  { id: 5, name: "ตารางงาน", path: "/schedule" },
+
 ];
 
 //wilxiiix
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const checkActivePath = useActivePath()
 
   return (
     <nav>
@@ -25,7 +29,7 @@ const Navbar = () => {
                 className="flex gap-1 font-bold text-gray-700 items-center "
               >
                 <span className="material-icons mr-3">group</span>
-                <span>Englot</span>
+                <span className="text-2xl">Englot</span>
               </a>
             </div>
           </div>
@@ -33,8 +37,8 @@ const Navbar = () => {
             <div className="hidden xs:flex items-center gap-10">
               <div className="hidden lg:flex gap-8 ">
                 {NavLinks.map((link) => (
-                  <Link key={link.id} href={link.path}>
-                    <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900">
+                  <Link key={link.id} href={link.path} className={checkActivePath(link.path) ? 'bg-red-500 text-white rounded-md' : 'text-gray-700'}>
+                    <span className="block px-3 py-2 rounded-md text-base font-medium hover:bg-lime-100 ">
                       {link.name}
                     </span>
                   </Link>
@@ -57,8 +61,8 @@ const Navbar = () => {
         <div className="px-8">
           <div className="flex flex-col gap-2 font-bold tracking-wider">
             {NavLinks.map((link) => (
-              <Link key={link.id} href={link.path}>
-                <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-emerald-400">
+              <Link key={link.id} href={link.path} className={checkActivePath(link.path) ? 'bg-red-500 rounded-lg text-white ' : 'text-gray-700'}>
+                <span className="block px-3 py-2 rounded-md text-base font-medium hover:bg-lime-100 ">
                   {link.name}
                 </span>
               </Link>
