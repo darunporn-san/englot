@@ -8,6 +8,7 @@ export interface ICardSocial {
     instagram: string;
     twitter: string;
     facebook: string;
+    tiktok:string;
   };
 }
 const actorList: ICardSocial[] = [
@@ -19,6 +20,7 @@ const actorList: ICardSocial[] = [
       instagram: "fa_engfa8",
       twitter: "EWaraha",
       facebook: "engfa.waraha.9",
+      tiktok:"@engfa32"
     },
   },
   {
@@ -29,6 +31,7 @@ const actorList: ICardSocial[] = [
       instagram: "itscharlotty",
       twitter: "itscharlotty",
       facebook: "ms.charlotteaustin",
+      tiktok:"@itscharlotty"
     },
   },
 ];

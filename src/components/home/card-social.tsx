@@ -2,7 +2,7 @@ import { ICardSocial } from "@/app/page";
 import Image from "next/image";
 
 const CardSocial = ({ detail }: { detail: ICardSocial }) => {
-  const { name, image,birthday, social_media } = detail;
+  const { name, image, birthday, social_media } = detail;
 
   const calculateAge = (birthday: string): number => {
     const birthDate = new Date(birthday);
@@ -12,7 +12,7 @@ const CardSocial = ({ detail }: { detail: ICardSocial }) => {
     const dayDifference = today.getDate() - birthDate.getDate();
 
     if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
-        age--;
+      age--;
     }
     return age;
   };
@@ -25,10 +25,12 @@ const CardSocial = ({ detail }: { detail: ICardSocial }) => {
           src={`/images/${image}.png`}
         />
         <p className="text-white mt-2 text-xl">{name}</p>
-        <p className="text-white mb-4 mt-0 text-sm">อายุ {calculateAge(birthday)} ปี</p>
+        <p className="text-white mb-4 mt-0 text-sm">
+          อายุ {calculateAge(birthday)} ปี
+        </p>
         <div className="icons">
           <a
-            className="instagram bg-gray-700 hover:bg-instagram-gradient transition transform duration-500 hover:-translate-y-1 " 
+            className="instagram bg-gray-700 hover:bg-instagram-gradient transition transform duration-500 hover:-translate-y-1 "
             href={`https://www.instagram.com/${social_media.instagram}`}
             target="_blank"
           >
@@ -49,7 +51,7 @@ const CardSocial = ({ detail }: { detail: ICardSocial }) => {
             </svg>
           </a>
           <a
-            className="x bg-gray-700 hover:bg-black  hover:border-white transition transform duration-500 hover:-translate-y-1 " 
+            className="x bg-gray-700 hover:bg-black  hover:border-white transition transform duration-500 hover:-translate-y-1 "
             href={`https://twitter.com/${social_media.twitter}`}
             target="_blank"
           >
@@ -71,30 +73,59 @@ const CardSocial = ({ detail }: { detail: ICardSocial }) => {
           </a>
           <a
             target="_blank"
-            className="facebook bg-gray-700  hover:bg-[#1877F2] transition transform duration-500 hover:-translate-y-1 " 
+            className="facebook bg-gray-700  hover:bg-[#1877F2] transition transform duration-500 hover:-translate-y-1 "
             href={`https://web.facebook.com/${social_media.facebook}`}
           >
             <svg
+              fill="#ffffff"
+              height="24"
+
+              width="24"              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              stroke="#ffffff"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <g id="7935ec95c421cee6d86eb22ecd11b7e3">
+                  {" "}
+                  <path
+                    d="M283.122,122.174c0,5.24,0,22.319,0,46.583h83.424l-9.045,74.367h-74.379 c0,114.688,0,268.375,0,268.375h-98.726c0,0,0-151.653,0-268.375h-51.443v-74.367h51.443c0-29.492,0-50.463,0-56.302 c0-27.82-2.096-41.02,9.725-62.578C205.948,28.32,239.308-0.174,297.007,0.512c57.713,0.711,82.04,6.263,82.04,6.263 l-12.501,79.257c0,0-36.853-9.731-54.942-6.263C293.539,83.238,283.122,94.366,283.122,122.174z"
+                  >
+                    {" "}
+                  </path>{" "}
+                </g>{" "}
+              </g>
+            </svg>
+          </a>
+          <a
+            target="_blank"
+            className="tiktok bg-gray-700  hover:bg-[#010101] transition transform duration-500 hover:-translate-y-1 "
+            href={`https://www.tiktok.com/${social_media.tiktok}`}
+          >
+            <svg
+              fill="#ffffff"
+              viewBox="0 0 24.00 24.00"
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 32 32"
+              stroke="#ffffff"
               height="24"
               width="24"
+              stroke-width="0.00024000000000000003"
             >
-              <path
-                d="M15.5,30h-11C3.122,30,2,28.879,2,27.5V8c0-0.276,0.224-0.5,0.5-0.5S3,7.724,3,8v19.5    C3,28.327,3.673,29,4.5,29h11c0.276,0,0.5,0.224,0.5,0.5S15.776,30,15.5,30z"
-                stroke-linejoin="round"
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
                 stroke-linecap="round"
-                stroke-width="1"
-                stroke="currentColor"
-              />
-              <path
-                d="M27.5,30h-6c-0.276,0-0.5-0.224-0.5-0.5v-10c0-0.276,0.224-0.5,0.5-0.5h3.059l0.375-3H21.5    c-0.276,0-0.5-0.224-0.5-0.5v-4c0-0.827,0.673-1.5,1.5-1.5H25V7h-3.5C19.57,7,18,8.57,18,10.5v5c0,0.276-0.224,0.5-0.5,0.5H14v3    h3.5c0.276,0,0.5,0.224,0.5,0.5v10c0,0.276-0.224,0.5-0.5,0.5S17,29.776,17,29.5V20h-3.5c-0.276,0-0.5-0.224-0.5-0.5v-4    c0-0.276,0.224-0.5,0.5-0.5H17v-4.5C17,8.019,19.019,6,21.5,6h4C25.776,6,26,6.224,26,6.5v4c0,0.276-0.224,0.5-0.5,0.5h-3    c-0.276,0-0.5,0.225-0.5,0.5V15h3.5c0.144,0,0.28,0.062,0.375,0.169c0.095,0.107,0.139,0.251,0.121,0.394l-0.5,4    C25.465,19.813,25.252,20,25,20h-3v9h5.5c0.827,0,1.5-0.673,1.5-1.5v-23C29,3.673,28.327,3,27.5,3h-23C3.673,3,3,3.673,3,4.5v1    C3,5.776,2.776,6,2.5,6S2,5.776,2,5.5v-1C2,3.121,3.122,2,4.5,2h23C28.878,2,30,3.121,30,4.5v23C30,28.879,28.878,30,27.5,30z"
                 stroke-linejoin="round"
-                stroke-linecap="round"
-                stroke-width="1"
-                stroke="currentColor"
-              />
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"></path>
+              </g>
             </svg>
           </a>
         </div>
