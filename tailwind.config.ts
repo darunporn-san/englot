@@ -12,11 +12,12 @@ const config: Config = {
         fluid: "repeat(auto-fit, minmax(15rem, 1fr))",
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        // "banner-bg": "url('../englot/public/images/banner2.png')"
+
       },
       colors: {
+        hoverColor: "#ffaa17",
+        darkRed: "#ea0638",
         primary: {
           DEFAULT: "#FF592C;",
           purple: "#9757D7",

@@ -54,3 +54,63 @@ body {
   font-weight: 400;
   font-style: normal;
 } */
+
+.banner{
+  background: url('../../public/images/banner2.png') no-repeat ;
+  background-size: 100% 100%;
+
+  margin: 0; /* to remove the default white margin of body */
+  padding: 0; /* to remove the default white margin of body */
+  overflow: hidden;
+}
+
+@layer components {
+  .navbarLi {
+    @apply hover:text-hoverColor cursor-pointer duration-300;
+  }
+}
+
+.card {
+  --dark: #212121;
+  --darker: #111111;
+  --semidark: #2c2c2c;
+  --lightgray: #e8e8e8;
+  --unit: 10px;
+
+  background-color: var(--darker);
+  box-shadow: 0 0 var(--unit) var(--darker);
+  border: calc(var(--unit) / 2) solid var(--darker);
+  border-radius: var(--unit);
+  position: relative;
+  padding: var(--unit);
+  overflow: hidden;
+}
+
+
+
+
+.card .image {
+  width: 200px;
+  animation: keyframes-floating-img 10s ease-in-out infinite;
+}
+
+.card .icons {
+  display: flex;
+  gap: var(--unit);
+}
+
+.card .icons a {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark);
+  color: var(--lightgray);
+  padding: calc(var(--unit) / 2);
+  border-radius: calc(var(--unit) / 2);
+}
+
+.card .icons a:hover {
+  transition: 0.2s;
+  background-color: var(--semidark);
+}
