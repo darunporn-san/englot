@@ -37,8 +37,8 @@ export default function History() {
           >
             {["engfa", "charlotte"]
               .filter((o) => o === selected || selected === "")
-              .map((item) => (
-                <div className="card-history-2">
+              .map((item,key:number) => (
+                <div className="card-history-2" key={key}>
                   <div
                     className="card-info flex cursor-pointer"
                     onClick={() => handleCardClick(item)}
