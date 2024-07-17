@@ -1,5 +1,8 @@
+'use client'
 import CardSocial from "@/components/home/card-social";
+import axios from "axios";
 import Image from "next/image";
+import { useEffect } from "react";
 export interface ICardSocial {
   name: string;
   image: string;
@@ -26,7 +29,7 @@ const actorList: ICardSocial[] = [
   {
     name: "Charlotte Austin",
     birthday: "1998-12-21",
-    image: "char",
+    image: "charlotte",
     social_media: {
       instagram: "itscharlotty",
       twitter: "itscharlotty",
@@ -36,13 +39,15 @@ const actorList: ICardSocial[] = [
   },
 ];
 export default function Home() {
+
+ 
   return (
     <div className="py-10">
       <p className="text-xl md:text-3xl my-3">อยากรู้จักเราไหม ?? </p>
 
       <div className="md:flex text-center justify-center ">
         {actorList.map((actor: ICardSocial, key: number) => (
-          <div key={key}>
+          <div key={key} className="cards">
             <CardSocial detail={actor} />
           </div>
         ))}

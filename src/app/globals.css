@@ -1,6 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap'); */
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,12 +22,11 @@ body {
   font-family: "Sriracha";
 }
 
-
 .material-icons {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 24px; /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -46,7 +44,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
 }
 
 /* .sriracha-regular {
@@ -55,8 +53,8 @@ body {
   font-style: normal;
 } */
 
-.banner{
-  background: url('../../public/images/banner2.png') no-repeat ;
+.banner {
+  background: url("../../public/images/banner2.png") no-repeat;
   background-size: 100% 100%;
 
   margin: 0; /* to remove the default white margin of body */
@@ -86,9 +84,6 @@ body {
   overflow: hidden;
 }
 
-
-
-
 .card .image {
   width: 200px;
   animation: keyframes-floating-img 10s ease-in-out infinite;
@@ -111,6 +106,134 @@ body {
 }
 
 .card .icons a:hover {
-  transition: 0.2s;
+  /* transition: 0.2s; */
   /* background-color: var(--semidark); */
+}
+/* 
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+} */
+
+.card-history-2 {
+  --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  /* width: 190px; */
+  /* height: 254px; */
+  padding: 5px;
+  border-radius: 1rem;
+  overflow: visible;
+  background: #f7ba2b;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+ }
+
+ .card-history-2::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(25px);
+  background: #f7ba2b;
+  background: var(--background);
+  transition: opacity .5s;
+ }
+ .card-info {
+  --color: #181818;
+  background: var(--color);
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  /* height: 100%; */
+  overflow: visible;
+  border-radius: .7rem;
+ }
+
+ .card-history-2:hover::after {
+  opacity: 0;
+ }
+ 
+
+ 
+.red {
+  background-color: #f43f5e;
+}
+
+.cards-history .white {
+  background-color: #f8f8f8;
+  color: black;
+}
+
+.cards-history .card-history {
+
+  border-radius: 10px;
+  color: rgb(1, 1, 1);
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.cards-history .card-history p.tip {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.cards-history .card-history p.second-text {
+  font-size: 0.7em;
+}
+.history-filter {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+.card-history-2:hover{
+  transform: scale(1.1);
+}
+.card-container {
+  position: relative;
+}
+
+.cards-history::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  left: 10%;
+  width: 80%;
+  height: 5px;
+  background: #ccc;
+  z-index: -1;
+}
+
+.card-history:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  width: 20px;
+  height: 1px;
+  background: #ccc;
+  z-index: -1;
+} 
+.child-nodes::before {
+  content: "";
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  width: 5px;
+  height: 300px; 
+  background: #ccc; 
+  z-index: -1;
 }
