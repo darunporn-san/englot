@@ -1,10 +1,12 @@
 import { ICardSocial } from "@/app/page";
+import Image from "next/image";
 
 const CardSocial = ({ detail }: { detail: ICardSocial }) => {
   const { name, image, social_media } = detail;
   return (
     <>
       <div className="card mx-5 my-3 md:my-0">
+       
         <img className="image max-h-60 m-auto" alt="" src={`/images/${image}.png`} />
         <p className="text-white my-2">{name}</p>
         <div className="icons">
@@ -29,7 +31,11 @@ const CardSocial = ({ detail }: { detail: ICardSocial }) => {
               ></path>
             </svg>
           </a>
-          <a className="x" href={`https://twitter.com/${social_media.twitter}`} target="_blank">
+          <a
+            className="x"
+            href={`https://twitter.com/${social_media.twitter}`}
+            target="_blank"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -47,7 +53,7 @@ const CardSocial = ({ detail }: { detail: ICardSocial }) => {
             </svg>
           </a>
           <a
-          target="_blank"
+            target="_blank"
             className="facebook"
             href={`https://web.facebook.com/${social_media.facebook}`}
           >

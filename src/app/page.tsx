@@ -35,8 +35,11 @@ export default function Home() {
       <p className="text-xl md:text-3xl my-3">อยากรู้จักเราไหม ?? </p>
 
       <div className="md:flex text-center justify-center ">
-        {actorList.map((actor) => (
-          <CardSocial detail={actor} />
+        {actorList.map((actor:ICardSocial,key:number) => (
+          <div key={key}>
+                      <CardSocial detail={actor} />
+
+          </div>
         ))}
       </div>
     </div>
