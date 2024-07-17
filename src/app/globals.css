@@ -104,7 +104,7 @@ body {
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  background-color: var(--dark);
+  /* background-color: var(--dark); */
   color: var(--lightgray);
   padding: calc(var(--unit) / 2);
   border-radius: calc(var(--unit) / 2);
@@ -112,5 +112,5 @@ body {
 
 .card .icons a:hover {
   transition: 0.2s;
-  background-color: var(--semidark);
+  /* background-color: var(--semidark); */
 }

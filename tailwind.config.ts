@@ -13,9 +13,17 @@ const config: Config = {
       },
       backgroundImage: {
         // "banner-bg": "url('../englot/public/images/banner2.png')"
+        'instagram-gradient': 'linear-gradient(225deg, #833AB4, #FD1D1D, #F56040, #FCAF45, #FFDC80)',
 
       },
       colors: {
+        instagram: {
+          purple: '#833AB4',
+          red: '#FD1D1D',
+          orange: '#F56040',
+          yellow: '#FCAF45',
+          pink: '#FFDC80',
+        },
         hoverColor: "#ffaa17",
         darkRed: "#ea0638",
         primary: {

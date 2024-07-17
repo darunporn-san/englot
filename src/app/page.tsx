@@ -3,6 +3,7 @@ import Image from "next/image";
 export interface ICardSocial {
   name: string;
   image: string;
+  birthday: string;
   social_media: {
     instagram: string;
     twitter: string;
@@ -12,6 +13,7 @@ export interface ICardSocial {
 const actorList: ICardSocial[] = [
   {
     name: "Engfa Waraha",
+    birthday: "1995-02-15",
     image: "engfa",
     social_media: {
       instagram: "fa_engfa8",
@@ -21,6 +23,7 @@ const actorList: ICardSocial[] = [
   },
   {
     name: "Charlotte Austin",
+    birthday: "1998-12-21",
     image: "char",
     social_media: {
       instagram: "itscharlotty",
@@ -35,10 +38,9 @@ export default function Home() {
       <p className="text-xl md:text-3xl my-3">อยากรู้จักเราไหม ?? </p>
 
       <div className="md:flex text-center justify-center ">
-        {actorList.map((actor:ICardSocial,key:number) => (
+        {actorList.map((actor: ICardSocial, key: number) => (
           <div key={key}>
-                      <CardSocial detail={actor} />
-
+            <CardSocial detail={actor} />
           </div>
         ))}
       </div>

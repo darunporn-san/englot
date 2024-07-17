@@ -2,16 +2,33 @@ import { ICardSocial } from "@/app/page";
 import Image from "next/image";
 
 const CardSocial = ({ detail }: { detail: ICardSocial }) => {
-  const { name, image, social_media } = detail;
+  const { name, image,birthday, social_media } = detail;
+
+  const calculateAge = (birthday: string): number => {
+    const birthDate = new Date(birthday);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    const dayDifference = today.getDate() - birthDate.getDate();
+
+    if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+        age--;
+    }
+    return age;
+  };
   return (
     <>
       <div className="card mx-5 my-3 md:my-0">
-       
-        <img className="image max-h-60 m-auto" alt="" src={`/images/${image}.png`} />
-        <p className="text-white my-2">{name}</p>
+        <img
+          className="image max-h-60 m-auto"
+          alt=""
+          src={`/images/${image}.png`}
+        />
+        <p className="text-white mt-2 text-xl">{name}</p>
+        <p className="text-white mb-4 mt-0 text-sm">อายุ {calculateAge(birthday)} ปี</p>
         <div className="icons">
           <a
-            className="instagram"
+            className="instagram bg-gray-700 hover:bg-instagram-gradient transition transform duration-500 hover:-translate-y-1 " 
             href={`https://www.instagram.com/${social_media.instagram}`}
             target="_blank"
           >
@@ -32,7 +49,7 @@ const CardSocial = ({ detail }: { detail: ICardSocial }) => {
             </svg>
           </a>
           <a
-            className="x"
+            className="x bg-gray-700 hover:bg-black  hover:border-white transition transform duration-500 hover:-translate-y-1 " 
             href={`https://twitter.com/${social_media.twitter}`}
             target="_blank"
           >
@@ -54,7 +71,7 @@ const CardSocial = ({ detail }: { detail: ICardSocial }) => {
           </a>
           <a
             target="_blank"
-            className="facebook"
+            className="facebook bg-gray-700  hover:bg-[#1877F2] transition transform duration-500 hover:-translate-y-1 " 
             href={`https://web.facebook.com/${social_media.facebook}`}
           >
             <svg
