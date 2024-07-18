@@ -75,7 +75,7 @@ export default function History() {
             <div className="ml-5">
               <DetailHistory />
             </div>
-          )}
+         )}
         </div>
 
         <div className={`card-history-2 ${selected !== "" && "hidden"}`}>
