@@ -72,13 +72,12 @@ const Playlist = ({ selectList }: any) => {
       </div>
       <div className="w-full md:w-1/3 bg-red-200 overflow-y-auto md:ml-10 p-4">
         <p className="text-3xl">{selectList.name} </p>
-        {selectList.list?.map((list: any, key: number) => (
-          <div>
+        {selectList.list?.map((list: any) => (
+          <div key={list.key}>
             <div className="text-xl">{list.key}</div>
             {list.list?.map((eplist: any, key: number) => {
-                console.log('eplist: ',list, eplist)
               return (
-                <div className={`flex my-2 pl-5 mr-5 md:mr-0 justify-between cursor-pointer px-2 py-1  ${selected.ep === eplist.ep? "bg-violet-200 ":"bg-emerald-200" }`} onClick={() => setSelected(eplist)}>
+                <div key={key} className={`flex my-2 pl-5 mr-5 md:mr-0 justify-between cursor-pointer px-2 py-1  ${selected.ep === eplist.ep? "bg-violet-200 ":"bg-emerald-200" }`} onClick={() => setSelected(eplist)}>
                       <div >EP {eplist.ep}</div>
                       <span className="material-icons" onClick={handlePlayPause}>
                      {playing && selected.ep === eplist.ep
